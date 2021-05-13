@@ -4,8 +4,7 @@ let weather = {
     fetchWeather : function(city){
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid=" + this.apiKey)
     .then((response) => response.json())
-    .then((data) => this.displayWeather(data));
-    //.catch(err => alert("Kindly enter a valid city name!"));
+    .then((data) => this.displayWeather(data)).catch(err => alert("Kindly enter a valid city name!"))
     },
     displayWeather : function(data){
         const { name } = data;
